@@ -1,8 +1,9 @@
 .navContainer {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	align-items: center;
 	background-color: rgb(39, 39, 39);
-	padding: 1rem;
+	padding: 0 1rem;
 
 	a {
 		color: rgb(245, 143, 143);
@@ -12,5 +13,9 @@
 	
 	a:hover {
 		color: rgb(240, 64, 64);
+	}
+
+	img {
+		height: 75px;
 	}
 }

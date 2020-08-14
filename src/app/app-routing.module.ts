@@ -3,12 +3,12 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { PeopleComponent } from './people/people.component'
 import { StarshipsComponent } from './starships/starships.component'
+import { HomebaseComponent } from './homebase/homebase.component'
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/',
-    pathMatch: 'full'
+    component: HomebaseComponent
   },
   {
     path: 'people',
