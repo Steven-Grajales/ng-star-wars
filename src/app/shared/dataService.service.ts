@@ -9,7 +9,7 @@ export class DataService {
 	constructor(private http: HttpClient) { }
 
 	getPeople() {
-		console.log(this.http.get(`${API}people/`))
 		return this.http.get(`${API}people/`)
+		// return this.http.get(`${API}people/?page=4`)
 	}
 }
