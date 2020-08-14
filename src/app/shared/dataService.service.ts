@@ -12,4 +12,8 @@ export class DataService {
 		return this.http.get(`${API}people/`)
 		// return this.http.get(`${API}people/?page=4`)
 	}
+
+	getStarShips() {
+		return this.http.get(`${API}starships/`)
+	}
 }

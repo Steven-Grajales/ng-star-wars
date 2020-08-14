@@ -1,0 +1,16 @@
+.navContainer {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: rgb(39, 39, 39);
+	padding: 1rem;
+
+	a {
+		color: rgb(245, 143, 143);
+		text-decoration: none;
+		font-size: 1.3em;
+	}
+	
+	a:hover {
+		color: rgb(240, 64, 64);
+	}
+}

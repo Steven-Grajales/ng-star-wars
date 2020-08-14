@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
 import { PeopleComponent } from './people/people.component'
+import { StarshipsComponent } from './starships/starships.component'
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'starships',
-    component: PeopleComponent
+    component: StarshipsComponent
   }
 ]
 

@@ -1,0 +1,17 @@
+.spinner {
+	-webkit-animation: rotation 10s infinite linear;
+	display: block;
+	margin: auto;
+	margin-top: 10%;
+}
+
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+		height: 100px;
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+		height: 250px
+	}
+}

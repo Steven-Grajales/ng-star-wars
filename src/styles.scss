@@ -11,14 +11,6 @@
 	  font-family: Drama Sans;
   }
 
-  nav {
-	  display: flex;
-	  justify-content: space-evenly;
-	  a {
-		  color: red;
-		  text-decoration: none;
-	  }
-	  a:hover {
-		  text-decoration: underline;
-	  }
+  body {
+	  margin: 0;
   }
