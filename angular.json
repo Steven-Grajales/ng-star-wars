@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "ng-star-wars"
+  "defaultProject": "ng-star-wars",
+  "cli": {
+    "analytics": false
+  }
 }
