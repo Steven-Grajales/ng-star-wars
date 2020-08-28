@@ -12,11 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'people',
-    loadChildren: './components/people/people.module#PeopleModule'
+    loadChildren: () => import('./components/people/people.module').then(m => m.PeopleModule)
   },
   {
     path: 'starships',
-    loadChildren: './components/starships/starships.module#StarshipsModule'
+    loadChildren: () => import('./components/starships/starships.module').then(m => m.StarshipsModule)
   }
 ]
 
