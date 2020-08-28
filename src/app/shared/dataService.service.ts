@@ -8,12 +8,11 @@ export class DataService {
 
 	constructor(private http: HttpClient) { }
 
-	getPeople() {
-		return this.http.get(`${API}people/`)
-		// return this.http.get(`${API}people/?page=4`)
+	getPeople(pageIndex: number) {
+		return this.http.get(`${API}people/?page=${pageIndex}`)
 	}
 
-	getStarShips() {
-		return this.http.get(`${API}starships/`)
+	getStarShips(pageIndex: number) {
+		return this.http.get(`${API}starships/?page=${pageIndex}`)
 	}
 }

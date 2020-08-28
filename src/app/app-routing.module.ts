@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { PeopleComponent } from './people/people.component'
-import { StarshipsComponent } from './starships/starships.component'
-import { HomebaseComponent } from './homebase/homebase.component'
+import { PeopleComponent } from './components/people/people.component'
+import { StarshipsComponent } from './components/starships/starships.component'
+import { HomebaseComponent } from './components/homebase/homebase.component'
 
 const routes: Routes = [
   {
