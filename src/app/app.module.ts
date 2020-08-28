@@ -7,13 +7,13 @@ import { AppRoutingModule } from './app-routing.module'
 import { SharedModule } from './modules/shared/shared.module'
 // Components
 import { NavbarComponent, HomebaseComponent } from './components'
-import { AppComponent } from './app.component'
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomebaseComponent,
+    HomebaseComponent
   ],
   imports: [
     BrowserModule,
