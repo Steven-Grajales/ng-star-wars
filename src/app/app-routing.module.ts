@@ -1,27 +1,33 @@
+// Angular
 import { NgModule } from '@angular/core'
-import { Routes, RouterModule } from '@angular/router'
-
-import { PeopleComponent } from './components/people/people.component'
-import { StarshipsComponent } from './components/starships/starships.component'
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router'
+// Components
 import { HomebaseComponent } from './components/homebase/homebase.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: HomebaseComponent
+    component: HomebaseComponent,
+    pathMatch: 'full'
   },
   {
     path: 'people',
-    component: PeopleComponent
+    loadChildren: './components/people/people.module#PeopleModule'
   },
   {
     path: 'starships',
-    component: StarshipsComponent
+    loadChildren: './components/starships/starships.module#StarshipsModule'
   }
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }
