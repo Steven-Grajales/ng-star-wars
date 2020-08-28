@@ -1,0 +1,8 @@
+<app-loading-spinner *ngIf="!starships"></app-loading-spinner>
+
+<p *ngFor="let starship of starships">
+	<span>
+		<img class="starshipIcon" src="../assets/icons/MillenniumFalcon.png">
+	</span>
+	{{starship.name}} - {{starship.model}}
+</p>

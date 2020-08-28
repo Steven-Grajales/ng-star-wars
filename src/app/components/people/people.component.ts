@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { Subscription } from 'rxjs'
 
-import { DataService } from '../shared/dataService.service'
-import { People } from '../models/people.model'
-import { PeopleData } from '../models/peopleData.model'
+import { DataService } from '../../shared/dataService.service'
+import { People } from '../../models/people.model'
+import { PeopleData } from '../../models/peopleData.model'
 
 @Component({
   selector: 'app-people',
@@ -17,11 +17,7 @@ export class PeopleComponent implements OnInit, OnDestroy {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.peopleSub = this.dataService.getPeople()
-      .subscribe((data: PeopleData) => {
-        console.log(data)
-        this.people = data.results
-      })
+    this.peopleSub = this.dataService.getPeople().subscribe((data: PeopleData) => this.people = data.results)
   }
 
   ngOnDestroy() {
