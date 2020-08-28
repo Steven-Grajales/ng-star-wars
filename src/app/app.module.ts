@@ -5,9 +5,13 @@ import { HttpClientModule } from '@angular/common/http'
 // Modules
 import { AppRoutingModule } from './app-routing.module'
 import { SharedModule } from './modules/shared/shared.module'
+import { NgxsModule } from '@ngxs/store'
 // Components
 import { NavbarComponent, HomebaseComponent } from './components'
 import { AppComponent } from './app.component';
+
+import { environment } from 'src/environments/environment'
+import { PeopleState } from './modules/people/store/people.state'
 
 @NgModule({
   declarations: [
@@ -19,6 +23,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxsModule.forRoot([PeopleState], {
+      developmentMode: !environment.production
+    }),
     SharedModule
   ],
   providers: [],

@@ -1,9 +1,8 @@
 # NgStarWars
 
-This project is on the latest version of Angular
-	* right now, the we are on verson 10.0.0
-
 ## Development server
+
+Run `npm i` to install dependencies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
