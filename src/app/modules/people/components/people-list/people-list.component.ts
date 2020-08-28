@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { DataService, icons } from '../../../shared'
@@ -20,7 +20,8 @@ export class PeopleListComponent implements OnInit {
   }
 
   private getPeople() {
-    this.peopleSub = this.dataService.getPeople(this.pageIndex).subscribe((data: PeopleData) => this.people = data.results)
+    this.peopleSub = this.dataService.getPeople(this.pageIndex)
+      .subscribe((data: PeopleData) => this.people = data.results)
   }
 
   ngOnInit(): void {
