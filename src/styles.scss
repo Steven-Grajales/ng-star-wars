@@ -1,3 +1,6 @@
+// Variables
+$background: rgb(110, 110, 110);
+
 @font-face {
 	font-family: 'Drama Sans';
 	src: url('https://rawgit.com/drama-sans/drama-sans/master/dist/DramaSans.eot'); /* IE9 Compat Modes */
@@ -13,6 +16,6 @@
 
   body {
 	  margin: 0;
-	  background-color: rgb(128, 128, 128);
+	  background-color: $background;
 	  color: white;
   }

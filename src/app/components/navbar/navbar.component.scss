@@ -1,18 +1,24 @@
+// Variables
+$hoverColor: rgb(250, 140, 140);
+$baseColor: rgb(255, 73, 73);
+$navBackground: rgb(39, 39, 39);
+// Styles
 .navContainer {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
-	background-color: rgb(39, 39, 39);
+	background-color:$navBackground;
 	padding: 0 1rem;
 
 	a {
-		color: rgb(245, 143, 143);
+		color: $baseColor;
 		text-decoration: none;
 		font-size: 1.3em;
+		margin: 0 1rem;
 	}
 	
 	a:hover {
-		color: rgb(240, 64, 64);
+		color: $hoverColor;
 	}
 
 	img {
