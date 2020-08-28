@@ -14,7 +14,6 @@ export class PeopleListComponent implements OnInit {
   iconPath: string
   pageIndex: number = 1
   people: People[]
-  @Output() selectedPerson: People
 
   constructor(private dataService: DataService) {
     this.iconPath = icons.JediOrderIcon
@@ -45,9 +44,5 @@ export class PeopleListComponent implements OnInit {
   lastPage() {
     this.pageIndex = 1
     this.getPeople()
-  }
-
-  selectPerson(person: People) {
-    this.selectedPerson = person
   }
 }

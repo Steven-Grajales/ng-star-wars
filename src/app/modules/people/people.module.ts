@@ -6,13 +6,19 @@ import { RouterModule } from '@angular/router'
 import { SharedModule } from '../shared/shared.module'
 import { PeopleRoutingModule } from './people-routing.module'
 // Components
-import { PeopleComponent, PersonDetailComponent, PeopleListComponent } from './'
+import {
+	PeopleComponent,
+	PersonDetailComponent,
+	PeopleListComponent,
+	PersonItemComponent
+} from './'
 
 @NgModule({
 	declarations: [
 		PersonDetailComponent,
 		PeopleComponent,
-		PeopleListComponent
+		PeopleListComponent,
+		PersonItemComponent
 	],
 	imports: [
 		RouterModule,
