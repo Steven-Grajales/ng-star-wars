@@ -1,4 +1,4 @@
-import { Starship } from './starship.model'
+import { Starship } from './'
 
 export interface StarshipData {
 	count: number,

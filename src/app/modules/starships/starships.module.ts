@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 // Modules
-import { SharedModule } from '../shared/shared.module'
-import { StarshipsRoutingModule } from './starships-routing.module'
+import { SharedModule } from '../shared'
+import { StarshipsRoutingModule } from './'
 // Components
 import { StarshipDetailComponent, StarshipsComponent } from './'
 

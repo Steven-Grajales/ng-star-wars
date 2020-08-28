@@ -1,4 +1,4 @@
-import { People } from './people.model'
+import { People } from './'
 
 export interface PeopleData {
 	count: number,
