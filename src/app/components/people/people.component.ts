@@ -44,6 +44,11 @@ export class PeopleComponent implements OnInit, OnDestroy {
     this.getPeople()
   }
 
+  lastPage() {
+    this.pageIndex = 1
+    this.getPeople()
+  }
+
   selectPerson(person: People) {
     this.selectedPerson = person
   }
