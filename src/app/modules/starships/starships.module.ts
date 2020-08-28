@@ -6,9 +6,7 @@ import { RouterModule } from '@angular/router'
 import { SharedModule } from '../shared/shared.module'
 import { StarshipsRoutingModule } from './starships-routing.module'
 // Components
-import { StarshipsComponent } from './starships.component'
-import { StarshipDetailComponent } from './starship-detail/starship-detail.component'
-
+import { StarshipDetailComponent, StarshipsComponent } from './'
 
 @NgModule({
 	declarations: [

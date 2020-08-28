@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 
-import { icons } from '../constants'
+import { icons } from '../../'
 
 @Component({
 	selector: 'app-loading-spinner',

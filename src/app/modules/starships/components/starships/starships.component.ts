@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy, Output } from '@angular/core'
 import { Subscription } from 'rxjs'
 
-import { DataService } from '../shared/dataService.service'
-import { icons } from '../shared/constants'
+import { DataService, icons } from '../../../shared'
 // Models
-import { Starship, StarshipData } from './models'
+import { Starship, StarshipData } from '../../models'
 
 @Component({
   selector: 'app-starships',

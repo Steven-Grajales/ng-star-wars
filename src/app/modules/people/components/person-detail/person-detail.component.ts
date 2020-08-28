@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 
-import { People } from 'src/app/modules/people/models/people.model'
+import { People } from '../../'
 
 @Component({
   selector: 'app-person-detail',

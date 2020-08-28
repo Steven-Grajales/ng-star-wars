@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy, Output } from '@angular/core'
 import { Subscription } from 'rxjs'
 
-import { icons } from '../../../../modules/shared/constants'
-import { DataService } from 'src/app/modules/shared/dataService.service'
+import { icons, DataService } from '../../../shared'
 // Models
 import { People, PeopleData } from '../../models'
 

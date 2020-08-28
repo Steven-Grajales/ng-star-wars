@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 
-import { LoadingSpinner } from './loading-spinner/loading-spinner.component'
+import { LoadingSpinner } from './'
 
 @NgModule({
 	declarations: [
