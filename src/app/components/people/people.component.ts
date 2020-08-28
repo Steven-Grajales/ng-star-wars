@@ -2,9 +2,10 @@ import { Component, OnInit, OnDestroy, Output } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { DataService } from '../../shared/dataService.service'
+import { icons } from '../../shared/constants'
+
 import { People } from '../../models/people.model'
 import { PeopleData } from '../../models/peopleData.model'
-import { icons } from '../../shared/constants'
 
 @Component({
   selector: 'app-people',

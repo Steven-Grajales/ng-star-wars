@@ -1,6 +1,7 @@
 # NgStarWars
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This project is on the latest version of Angular
+	* right now, the we are on verson 10.0.0
 
 ## Development server
 
