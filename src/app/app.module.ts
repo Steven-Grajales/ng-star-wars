@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { HttpClientModule } from '@angular/common/http'
 // Modules
 import { AppRoutingModule } from './app-routing.module'
-import { SharedModule } from './modules/shared'
+import { SharedModule } from './modules/shared/shared.module'
 // Components
 import { NavbarComponent, HomebaseComponent } from './components'
 import { AppComponent } from './app.component'

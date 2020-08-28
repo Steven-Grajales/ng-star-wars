@@ -1,5 +1,5 @@
 // Modules
-export { PeopleRoutingModule } from './people-routing.module'
+
 // Models
 export { People, PeopleData } from './models/index'
 // Components
