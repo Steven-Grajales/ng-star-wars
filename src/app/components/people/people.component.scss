@@ -4,8 +4,8 @@
 }
 .person:hover {
 	opacity: .5;
-	border: 1px solid black;
 }
 .peopleContainer {
 	display: flex;
+	justify-content: space-between;
 }

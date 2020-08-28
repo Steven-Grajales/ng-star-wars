@@ -1,3 +1,5 @@
-<p>person-detail works!</p>
-
-<p *ngIf="person">Person: {{person.name}}</p>
+<div *ngIf="person" class="personDetailContainer">
+	<p>Name: {{person.name}}</p>
+	<p>Height: {{person.height}}</p>
+	<p>Mass: {{person.mass}}</p>
+</div>

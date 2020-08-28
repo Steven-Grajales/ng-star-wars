@@ -12,7 +12,5 @@ export class PersonDetailComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log('person!!', this.person)
-  }
+  ngOnInit(): void { }
 }
