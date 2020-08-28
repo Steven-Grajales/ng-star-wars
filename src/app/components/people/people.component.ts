@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { DataService } from '../../shared/dataService.service'
@@ -16,6 +16,8 @@ export class PeopleComponent implements OnInit, OnDestroy {
   iconPath: string
   people: People[]
   peopleSub: Subscription
+  @Output() selectedPerson: People
+  // @Output() selectedPerson: People = new EventEmitter<People>()
 
   constructor(private dataService: DataService) {
     this.iconPath = icons.JediOrderIcon
@@ -41,5 +43,11 @@ export class PeopleComponent implements OnInit, OnDestroy {
   nextPage() {
     this.pageIndex++
     this.getPeople()
+  }
+
+  selectPerson(person: People) {
+    // this.selectedPerson.emit(person)
+    this.selectedPerson = person
+    console.log(this.selectedPerson)
   }
 }

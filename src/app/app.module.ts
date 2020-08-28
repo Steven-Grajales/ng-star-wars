@@ -12,7 +12,8 @@ import {
   HomebaseComponent
 } from './components'
 
-import { AppComponent } from './app.component'
+import { AppComponent } from './app.component';
+import { PersonDetailComponent } from './components/people/person-detail/person-detail.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component'
     PeopleComponent,
     StarshipsComponent,
     NavbarComponent,
-    HomebaseComponent
+    HomebaseComponent,
+    PersonDetailComponent
   ],
   imports: [
     BrowserModule,

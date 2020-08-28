@@ -2,3 +2,10 @@
 	margin-left: 1rem;
 	height: 25px;
 }
+.person:hover {
+	opacity: .5;
+	border: 1px solid black;
+}
+.peopleContainer {
+	display: flex;
+}

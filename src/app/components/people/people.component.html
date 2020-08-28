@@ -1,11 +1,20 @@
 <app-loading-spinner *ngIf="!people"></app-loading-spinner>
 
-<p *ngFor="let person of people">
-	<span>
-		<img class="peopleIcon" [src]="iconPath">
-	</span>
-	{{person.name}} - {{person.height}} - {{person.mass}}
-</p>
+<div class="peopleContainer">
+
+	<div>
+		<p *ngFor="let person of people" (click)="selectPerson(person)" class="person">
+			<span>
+				<img class="peopleIcon" [src]="iconPath">
+			</span>
+			{{person.name}} - {{person.height}} - {{person.mass}}
+		</p>
+	</div>
+
+	<div>
+		<app-person-detail [person]="selectedPerson"></app-person-detail>
+	</div>
+</div>
 
 <button (click)="previousPage()">Previous Page</button>
 <button (click)="nextPage()">Next Page</button>
