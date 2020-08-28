@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
-import { icons } from '../../shared/constants'
+import { icons } from '../../modules/shared/constants'
 
 @Component({
   selector: 'app-homebase',
