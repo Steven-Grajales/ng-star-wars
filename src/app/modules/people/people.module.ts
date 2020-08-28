@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router'
 import { SharedModule } from 'src/app/shared/shared.module'
 import { PeopleRoutingModule } from './people-routing.module'
 // Components
-import { PersonDetailComponent } from './person-detail/person-detail.component'
 import { PeopleComponent } from './people.component'
+import { PersonDetailComponent } from './person-detail/person-detail.component'
 
 @NgModule({
 	declarations: [

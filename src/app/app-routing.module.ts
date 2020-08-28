@@ -12,11 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'people',
-    loadChildren: () => import('./components/people/people.module').then(m => m.PeopleModule)
+    loadChildren: () => import('./modules/people/people.module').then(m => m.PeopleModule)
   },
   {
     path: 'starships',
-    loadChildren: () => import('./components/starships/starships.module').then(m => m.StarshipsModule)
+    loadChildren: () => import('./modules/starships/starships.module').then(m => m.StarshipsModule)
   }
 ]
 
@@ -30,4 +30,6 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}

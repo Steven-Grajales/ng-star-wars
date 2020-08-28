@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http'
 // Modules
 import { AppRoutingModule } from './app-routing.module'
 import { SharedModule } from './shared/shared.module'
-import { PeopleModule } from './components/people/people.module'
-import { StarshipsModule } from './components/starships/starships.module'
 // Components
 import { NavbarComponent, HomebaseComponent } from './components'
 import { AppComponent } from './app.component'
@@ -21,9 +19,7 @@ import { AppComponent } from './app.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule,
-    PeopleModule,
-    StarshipsModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],
