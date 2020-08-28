@@ -1,11 +1,19 @@
 <app-loading-spinner *ngIf="!starships"></app-loading-spinner>
 
-<p *ngFor="let starship of starships">
-	<span>
-		<img class="starshipIcon" [src]="iconPath">
-	</span>
-	{{starship.name}} - {{starship.model}}
-</p>
+<div class="starshipContainer">
+	<div>
+		<p *ngFor="let starship of starships" (click)="selectStarship(starship)" class="starship">
+			<span>
+				<img class="starshipIcon" [src]="iconPath">
+			</span>
+			{{starship.name}}
+		</p>
+	</div>
+
+	<div>
+		<app-starship-detail [starship]="selectedStarship"></app-starship-detail>
+	</div>
+</div>
 
 <button (click)="previousPage()">Previous Page</button>
 <button (click)="nextPage()">Next Page</button>

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core'
+import { Component, OnInit, OnDestroy, Output } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { DataService } from '../../shared/dataService.service'

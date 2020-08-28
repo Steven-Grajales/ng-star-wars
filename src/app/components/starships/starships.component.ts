@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Component, OnInit, OnDestroy, Output } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { DataService } from '../../shared/dataService.service'
+import { icons } from '../../shared/constants'
+
 import { Starship } from '../../models/starship.model'
 import { StarshipData } from '../../models/starshipData.model'
-import { icons } from '../../shared/constants'
 
 @Component({
   selector: 'app-starships',
@@ -14,6 +15,7 @@ import { icons } from '../../shared/constants'
 export class StarshipsComponent implements OnInit, OnDestroy {
   pageIndex: number = 1
   starshipSub: Subscription
+  @Output() selectedStarship: Starship
   starships: Starship[]
   iconPath: string
 
@@ -41,5 +43,9 @@ export class StarshipsComponent implements OnInit, OnDestroy {
   nextPage() {
     this.pageIndex++
     this.getStarships()
+  }
+
+  selectStarship(starship: Starship) {
+    this.selectedStarship = starship
   }
 }

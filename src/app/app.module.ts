@@ -13,7 +13,8 @@ import {
 } from './components'
 
 import { AppComponent } from './app.component';
-import { PersonDetailComponent } from './components/people/person-detail/person-detail.component'
+import { PersonDetailComponent } from './components/people/person-detail/person-detail.component';
+import { StarshipDetailComponent } from './components/starships/starship-detail/starship-detail.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PersonDetailComponent } from './components/people/person-detail/person-
     StarshipsComponent,
     NavbarComponent,
     HomebaseComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
+    StarshipDetailComponent
   ],
   imports: [
     BrowserModule,
