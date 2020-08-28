@@ -3,9 +3,8 @@ import { Subscription } from 'rxjs'
 
 import { DataService } from '../../shared/dataService.service'
 import { icons } from '../../shared/constants'
-
-import { People } from '../../models/people.model'
-import { PeopleData } from '../../models/peopleData.model'
+// Models
+import { People, PeopleData } from './models'
 
 @Component({
   selector: 'app-people',

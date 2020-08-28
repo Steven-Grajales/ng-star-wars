@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 
-import { Starship } from 'src/app/models/starship.model'
+import { Starship } from 'src/app/modules/starships/models/starship.model'
 
 @Component({
   selector: 'app-starship-detail',

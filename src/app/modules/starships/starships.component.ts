@@ -3,9 +3,8 @@ import { Subscription } from 'rxjs'
 
 import { DataService } from '../../shared/dataService.service'
 import { icons } from '../../shared/constants'
-
-import { Starship } from '../../models/starship.model'
-import { StarshipData } from '../../models/starshipData.model'
+// Models
+import { Starship, StarshipData } from './models'
 
 @Component({
   selector: 'app-starships',
