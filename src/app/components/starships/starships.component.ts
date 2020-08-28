@@ -33,7 +33,7 @@ export class StarshipsComponent implements OnInit, OnDestroy {
     this.pageIndex--
     this.getStarships()
   }
-
+  
   nextPage() {
     this.pageIndex++
     this.getStarships()

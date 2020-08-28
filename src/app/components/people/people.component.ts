@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs'
 import { DataService } from '../../shared/dataService.service'
 import { People } from '../../models/people.model'
 import { PeopleData } from '../../models/peopleData.model'
+import { icons } from '../../shared/constants'
 
 @Component({
   selector: 'app-people',
@@ -12,10 +13,13 @@ import { PeopleData } from '../../models/peopleData.model'
 })
 export class PeopleComponent implements OnInit, OnDestroy {
   pageIndex: number = 1
-  peopleSub: Subscription
+  jediOrderIconPath: string
   people: People[]
+  peopleSub: Subscription
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+    this.jediOrderIconPath = icons.JediOrderIcon
+  }
 
   ngOnInit(): void {
     this.getPeople()

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+
+import { icons } from '../../shared/constants'
 
 @Component({
   selector: 'app-homebase',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homebase.component.scss']
 })
 export class HomebaseComponent implements OnInit {
+  iconPath: string
 
-  constructor() { }
+  constructor() {
+    this.iconPath = icons.DarthMaulLightsabers
+  }
 
   ngOnInit(): void {
   }
-
 }

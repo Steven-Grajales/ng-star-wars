@@ -1,7 +1,9 @@
 <app-loading-spinner *ngIf="!people"></app-loading-spinner>
 
 <p *ngFor="let person of people">
-	<span><img class="peopleIcon" src="../assets/icons/JediOrder.png"></span>
+	<span>
+		<img class="peopleIcon" [src]="jediOrderIconPath">
+	</span>
 	{{person.name}} - {{person.height}} - {{person.mass}}
 </p>
 
