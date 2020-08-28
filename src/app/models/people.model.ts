@@ -1,7 +1,5 @@
-export class People {
-	constructor(
-		public name: string,
-		public height: string,
-		public mass: string
-	) { }
+export interface People {
+	name: string,
+	height: string,
+	mass: string
 }

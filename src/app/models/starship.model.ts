@@ -1,6 +1,4 @@
-export class Starship {
-	constructor(
-		public name: string,
-		public model: string
-	) { }
+export interface Starship {
+	name: string,
+	model: string
 }
