@@ -9,6 +9,7 @@ import { icons } from '../constants'
 })
 export class LoadingSpinner {
 	path: string
+
 	constructor() {
 		this.path = icons.GalacticEmpire
 	}

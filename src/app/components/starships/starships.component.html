@@ -2,7 +2,7 @@
 
 <p *ngFor="let starship of starships">
 	<span>
-		<img class="starshipIcon" src="../assets/icons/MillenniumFalcon.png">
+		<img class="starshipIcon" [src]="iconPath">
 	</span>
 	{{starship.name}} - {{starship.model}}
 </p>

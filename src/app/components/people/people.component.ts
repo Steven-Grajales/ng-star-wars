@@ -13,12 +13,12 @@ import { icons } from '../../shared/constants'
 })
 export class PeopleComponent implements OnInit, OnDestroy {
   pageIndex: number = 1
-  jediOrderIconPath: string
+  iconPath: string
   people: People[]
   peopleSub: Subscription
 
   constructor(private dataService: DataService) {
-    this.jediOrderIconPath = icons.JediOrderIcon
+    this.iconPath = icons.JediOrderIcon
   }
 
   ngOnInit(): void {
