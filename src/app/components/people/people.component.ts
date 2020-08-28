@@ -17,7 +17,6 @@ export class PeopleComponent implements OnInit, OnDestroy {
   people: People[]
   peopleSub: Subscription
   @Output() selectedPerson: People
-  // @Output() selectedPerson: People = new EventEmitter<People>()
 
   constructor(private dataService: DataService) {
     this.iconPath = icons.JediOrderIcon
@@ -46,8 +45,6 @@ export class PeopleComponent implements OnInit, OnDestroy {
   }
 
   selectPerson(person: People) {
-    // this.selectedPerson.emit(person)
     this.selectedPerson = person
-    console.log(this.selectedPerson)
   }
 }
