@@ -10,7 +10,7 @@ import { NavbarComponent, HomebaseComponent } from './components'
 import { AppComponent } from './app.component'
 // Ngxs 
 import { NgxsModule } from '@ngxs/store'
-import { PeopleState } from './modules/people/state/people.state'
+import { PeopleState } from './modules/people/store/people.state'
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin'
 

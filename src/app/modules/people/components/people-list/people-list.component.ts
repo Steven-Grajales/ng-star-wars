@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
+import { Store } from '@ngxs/store'
 
 import { icons } from '../../../shared'
 import { People } from '../../models'
 import { PeopleService } from '../../providers/people.service'
-import * as PeopleActions from '../../actions/people.actions'
-import { Store } from '@ngxs/store'
-
+import * as PeopleActions from '../../store/people.actions'
 
 @Component({
   selector: 'app-people-list',
@@ -15,13 +14,14 @@ import { Store } from '@ngxs/store'
 })
 export class PeopleListComponent implements OnInit {
   peopleDataSub: Subscription
-  iconPath: string
-  pageIndex: number = 1
-  people: People[]
+  iconPath: string = icons.JediOrderIcon // Path to the icon to show next to the name of the person
+  pageIndex: number = 1 // Current Page index to fetch from api
+  people: People[] // Person objects to render
 
-  constructor(private peopleService: PeopleService, private store: Store) {
-    this.iconPath = icons.JediOrderIcon
-  }
+  constructor(
+    private peopleService: PeopleService,
+    private store: Store
+  ) { }
 
   private getPeople() {
     this.peopleDataSub = this.peopleService.fetchPeople(this.pageIndex).subscribe(data => {
