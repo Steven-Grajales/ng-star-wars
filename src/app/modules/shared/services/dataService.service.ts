@@ -6,9 +6,7 @@ import { API } from '../constants'
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
-	constructor(
-		private http: HttpClient
-	) { }
+	constructor(private http: HttpClient) { }
 
 	getStarShips(pageIndex: number) {
 		return this.http.get(`${API}starships/?page=${pageIndex}`)

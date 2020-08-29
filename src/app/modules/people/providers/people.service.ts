@@ -1,19 +1,13 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 
-import { Store } from '@ngxs/store'
-
-import { People, PeopleData } from '../models'
-import * as PeopleActions from '../actions/people.actions'
+import { People } from '../models'
 import { API } from '../../../modules/shared/constants'
 
 @Injectable({ providedIn: 'root' })
 export class PeopleService {
 
-	constructor(
-		private http: HttpClient,
-		private store: Store
-	) { }
+	constructor(private http: HttpClient) { }
 
 	getPeople(pageIndex: number) {
 		return this.http.get(`${API}people/?page=${pageIndex}`)
@@ -24,10 +18,6 @@ export class PeopleService {
 	}
 
 	fetchPeople(pageIndex: number) {
-		this.http.get<People[]>(`${API}people/?page=${pageIndex}`)
-			.subscribe((data: PeopleData) => {
-				console.log('people data in data service!', data)
-				this.store.dispatch(new PeopleActions.SetPeople(data.results))
-			})
+		return this.http.get<People[]>(`${API}people/?page=${pageIndex}`)
 	}
 }

@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { icons } from '../../../shared'
-import { People } from '../../models'
+import { People, PeopleData } from '../../models'
 import { PeopleService } from '../../providers/people.service'
+import * as PeopleActions from '../../actions/people.actions'
+import { Store } from '@ngxs/store'
+
 
 @Component({
   selector: 'app-people-list',
@@ -11,17 +14,26 @@ import { PeopleService } from '../../providers/people.service'
   styleUrls: ['./people-list.component.scss']
 })
 export class PeopleListComponent implements OnInit {
-  peopleSub: Subscription
+  peopleDataSub: Subscription
   iconPath: string
   pageIndex: number = 1
   people: People[]
 
-  constructor(private peopleService: PeopleService) {
+  constructor(private peopleService: PeopleService, private store: Store) {
     this.iconPath = icons.JediOrderIcon
   }
 
   private getPeople() {
-    this.peopleService.fetchPeople(this.pageIndex)
+    this.peopleDataSub = this.peopleService.fetchPeople(this.pageIndex)
+      .subscribe((data: PeopleData) => {
+        console.log('people data in data service!', data)
+        this.store.dispatch(new PeopleActions.SetPeople(data.results)).subscribe(data => {
+          this.store.dispatch(new PeopleActions.GetPeople).subscribe(people => {
+            this.people = people.peopleStore.people[0]
+            console.log('d', people)
+          }).unsubscribe()
+        })
+      })
   }
 
   ngOnInit(): void {
@@ -29,7 +41,7 @@ export class PeopleListComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.peopleSub.unsubscribe()
+    this.peopleDataSub.unsubscribe()
   }
 
   previousPage() {

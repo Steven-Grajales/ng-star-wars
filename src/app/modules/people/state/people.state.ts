@@ -27,13 +27,13 @@ export class PeopleState {
 	// 	})
 	// }
 
-	@Action(PeopleActions.AddPeople)
-	addPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.AddPeople) {
-		const state = getState()
-		patchState({
-			// people: [...state.people, payload]
-		})
-	}
+	// @Action(PeopleActions.AddPeople)
+	// addPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.AddPeople) {
+	// 	const state = getState()
+	// 	patchState({
+	// 		people: [...state.people, payload]
+	// 	})
+	// }
 
 	// @Action(PeopleActions.FetchPeople)
 	// fetchPeople({ getState, patchState }: StateContext<PeopleStateModel>, { }: PeopleActions.FetchPeople) {
