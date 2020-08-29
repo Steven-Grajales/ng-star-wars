@@ -28,4 +28,12 @@ export class PeopleState {
 			people: [...state.people, payload]
 		})
 	}
+
+	// @Action(PeopleActions.GetPerson)
+	// getPerson({ getState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.GetPerson) {
+	// 	const state = getState()
+	// 	console.log(state)
+	// 	console.log('payload', payload)
+	// 	return state.people[0][payload]
+	// }
 }

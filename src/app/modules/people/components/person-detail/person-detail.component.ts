@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router'
 import { People } from '../../'
 import { Subscription } from 'rxjs'
 import { PeopleService } from '../../providers/people.service'
+import { Store } from '@ngxs/store'
+// import { GetPerson } from '../../store/people.actions'
 
 @Component({
   selector: 'app-person-detail',
@@ -11,29 +13,29 @@ import { PeopleService } from '../../providers/people.service'
   styleUrls: ['./person-detail.component.scss']
 })
 export class PersonDetailComponent implements OnInit, OnDestroy {
-  id: number
   person: People
-  routeSubscription: Subscription
   getPersonSub: Subscription
 
   constructor(
     private route: ActivatedRoute,
     private peopleService: PeopleService
+    // private store: Store
   ) { }
 
   ngOnInit(): void {
-    this.routeSubscription = this.route.params
-      .subscribe(params => {
-        this.id = +params.id + 1
-        this.getPersonSub = this.peopleService.getPerson(this.id)
-          .subscribe((data: People) => {
-            this.person = data
-          })
-      })
+    // this.route.params.subscribe(params => {
+    //   const id = +params.id + 1
+    //   this.store.dispatch(new GetPerson(id)).subscribe(data => {
+    //     console.log('data', data)
+    //   })
+    // })
+    this.route.params.subscribe(params => {
+      this.getPersonSub = this.peopleService.getPerson(+params.id + 1)
+        .subscribe((data: People) => this.person = data)
+    })
   }
 
   ngOnDestroy(): void {
-    this.routeSubscription.unsubscribe()
     this.getPersonSub.unsubscribe()
   }
 }
