@@ -1,5 +1,3 @@
-// Modules
-
 // Models
 export { People, PeopleData } from './models'
 // Components

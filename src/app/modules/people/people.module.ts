@@ -27,6 +27,4 @@ import {
 		PeopleRoutingModule
 	]
 })
-export class PeopleModule {
-
-}
+export class PeopleModule { }

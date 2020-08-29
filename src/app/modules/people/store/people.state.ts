@@ -1,7 +1,7 @@
 import { State, Selector, Action, StateContext } from '@ngxs/store'
 
 import { People } from '../models'
-import * as PeopleActions from '../actions/people.actions'
+import * as PeopleActions from './people.actions'
 
 export class PeopleStateModel {
 	people: People[]

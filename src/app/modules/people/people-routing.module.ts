@@ -1,8 +1,9 @@
+// Angular
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-
+// Components
 import { PeopleComponent, PersonDetailComponent } from './'
-
+// Module routes
 const routes: Routes = [
 	{
 		path: '',
