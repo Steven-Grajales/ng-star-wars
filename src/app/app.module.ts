@@ -14,8 +14,6 @@ import { PeopleState } from './modules/people/state/people.state'
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin'
 
-// import { environment } from 'src/environments/environment'
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +32,11 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin'
     SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA] // Gets rid of <center/> tag errors
+  bootstrap: [
+    AppComponent
+  ],
+  schemas: [
+    NO_ERRORS_SCHEMA // Gets rid of <center/> tag errors
+  ]
 })
 export class AppModule { }
