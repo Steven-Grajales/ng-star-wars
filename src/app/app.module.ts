@@ -5,10 +5,14 @@ import { HttpClientModule } from '@angular/common/http'
 // Modules
 import { AppRoutingModule } from './app-routing.module'
 import { SharedModule } from './modules/shared/shared.module'
-import { NgxsModule } from '@ngxs/store'
 // Components
 import { NavbarComponent, HomebaseComponent } from './components'
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'
+// Ngxs 
+import { NgxsModule } from '@ngxs/store'
+import { PeopleState } from './modules/people/state/people.state'
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin'
 
 // import { environment } from 'src/environments/environment'
 
@@ -22,7 +26,11 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([
+      PeopleState
+    ]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
     // NgxsModule.forRoot([], {
     //   developmentMode: !environment.production
     // }),

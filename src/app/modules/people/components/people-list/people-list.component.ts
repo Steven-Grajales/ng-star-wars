@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
 
+import { Store } from '@ngxs/store'
+
 import { DataService, icons } from '../../../shared'
 import { People, PeopleData } from '../../models'
-import { Store } from '@ngxs/store'
-import { GetPeople } from '../../store/people.actions'
-// import { PeopleState } from '../../store/PeopleState'
+import { AddPeople } from '../../actions/people.actions'
 
 @Component({
   selector: 'app-people-list',
@@ -25,18 +25,16 @@ export class PeopleListComponent implements OnInit {
     this.iconPath = icons.JediOrderIcon
   }
 
-  // @Select(PeopleState) people$: Observable<string[]>
-
   private getPeople() {
-
     this.peopleSub = this.dataService.getPeople(this.pageIndex)
-      .subscribe((data: PeopleData) => this.people = data.results)
+      .subscribe((data: PeopleData) => {
+        this.people = data.results
+        this.store.dispatch(new AddPeople(data.results))
+      })
   }
 
   ngOnInit(): void {
     this.getPeople()
-    this.store.dispatch(new GetPeople).subscribe((data) => console.log(data))
-    // console.log(this.people$)
   }
 
   ngOnDestroy() {
