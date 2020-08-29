@@ -10,8 +10,7 @@ import { NgxsModule } from '@ngxs/store'
 import { NavbarComponent, HomebaseComponent } from './components'
 import { AppComponent } from './app.component';
 
-import { environment } from 'src/environments/environment'
-import { PeopleState } from './modules/people/store/people.state'
+// import { environment } from 'src/environments/environment'
 
 @NgModule({
   declarations: [
@@ -23,9 +22,10 @@ import { PeopleState } from './modules/people/store/people.state'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxsModule.forRoot([PeopleState], {
-      developmentMode: !environment.production
-    }),
+    NgxsModule.forRoot([]),
+    // NgxsModule.forRoot([], {
+    //   developmentMode: !environment.production
+    // }),
     SharedModule
   ],
   providers: [],
