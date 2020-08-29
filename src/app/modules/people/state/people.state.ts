@@ -20,7 +20,7 @@ export class PeopleState {
 	}
 
 	@Action(AddPerson)
-	add({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: AddPerson) {
+	addPerson({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: AddPerson) {
 		const state = getState()
 		patchState({
 			people: [...state.people, payload]
@@ -28,7 +28,7 @@ export class PeopleState {
 	}
 
 	@Action(AddPeople)
-	add({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: AddPeople) {
+	addPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: AddPeople) {
 		const state = getState()
 		patchState({
 			people: [...state.people, payload]

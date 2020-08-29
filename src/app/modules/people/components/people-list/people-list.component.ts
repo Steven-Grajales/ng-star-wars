@@ -5,7 +5,7 @@ import { Store } from '@ngxs/store'
 
 import { DataService, icons } from '../../../shared'
 import { People, PeopleData } from '../../models'
-import { AddPeople } from '../../actions/people.actions'
+import { AddPeople, GetPeople } from '../../actions/people.actions'
 
 @Component({
   selector: 'app-people-list',
@@ -31,6 +31,8 @@ export class PeopleListComponent implements OnInit {
         this.people = data.results
         // Add people data to ngxs store
         this.store.dispatch(new AddPeople(data.results))
+        const people = this.store.dispatch(new GetPeople)
+        console.log('get people from store', people)
       })
   }
 
