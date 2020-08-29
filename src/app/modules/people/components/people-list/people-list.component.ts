@@ -24,13 +24,17 @@ export class PeopleListComponent implements OnInit {
   ) { }
 
   private getPeople() {
-    this.peopleDataSub = this.peopleService.fetchPeople(this.pageIndex).subscribe(data => {
-      this.store.dispatch(new PeopleActions.SetPeople(data.results)).subscribe(() => {
-        this.store.dispatch(new PeopleActions.GetPeople).subscribe(people => {
-          this.people = people.peopleStore.people[0]
-        }).unsubscribe()
-      }).unsubscribe()
-    })
+    this.peopleDataSub = this.peopleService.fetchPeople(this.pageIndex)
+      .subscribe(data => {
+        console.log(data)
+        this.store.dispatch(new PeopleActions.SetPeople(data.results))
+          .subscribe(() => {
+            this.store.dispatch(new PeopleActions.GetPeople)
+              .subscribe(people => {
+                this.people = people.peopleStore.people[0]
+              }).unsubscribe()
+          }).unsubscribe()
+      })
   }
 
   ngOnInit(): void {
