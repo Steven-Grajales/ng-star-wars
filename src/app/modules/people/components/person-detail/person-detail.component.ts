@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
-import { Router, ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
 
 import { People } from '../../'
-import { DataService } from '../../../shared'
 import { Subscription } from 'rxjs'
+import { PeopleService } from '../../providers/people.service'
 
 @Component({
   selector: 'app-person-detail',
@@ -18,19 +18,18 @@ export class PersonDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataService
+    private peopleService: PeopleService
   ) { }
 
   ngOnInit(): void {
-    this.routeSubscription = this.route.params.subscribe(params => {
-      this.id = +params.id + 1
-      console.log(this.id)
-      // return this.dataService.getPerson(this.id).subscribe((data: People) => {
-      this.getPersonSub = this.dataService.getPerson(this.id).subscribe((data: People) => {
-        console.log(data)
-        this.person = data
+    this.routeSubscription = this.route.params
+      .subscribe(params => {
+        this.id = +params.id + 1
+        this.getPersonSub = this.peopleService.getPerson(this.id)
+          .subscribe((data: People) => {
+            this.person = data
+          })
       })
-    })
   }
 
   ngOnDestroy(): void {

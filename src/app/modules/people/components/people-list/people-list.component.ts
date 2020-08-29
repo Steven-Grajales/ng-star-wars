@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
 
-import { Store } from '@ngxs/store'
-
-import { DataService, icons } from '../../../shared'
-import { People, PeopleData } from '../../models'
-import { AddPeople, GetPeople } from '../../actions/people.actions'
+import { icons } from '../../../shared'
+import { People } from '../../models'
+import { PeopleService } from '../../providers/people.service'
 
 @Component({
   selector: 'app-people-list',
@@ -18,22 +16,12 @@ export class PeopleListComponent implements OnInit {
   pageIndex: number = 1
   people: People[]
 
-  constructor(
-    private dataService: DataService,
-    private store: Store
-  ) {
+  constructor(private peopleService: PeopleService) {
     this.iconPath = icons.JediOrderIcon
   }
 
   private getPeople() {
-    this.peopleSub = this.dataService.getPeople(this.pageIndex)
-      .subscribe((data: PeopleData) => {
-        this.people = data.results
-        // Add people data to ngxs store
-        this.store.dispatch(new AddPeople(data.results))
-        const people = this.store.dispatch(new GetPeople)
-        console.log('get people from store', people)
-      })
+    this.peopleService.fetchPeople(this.pageIndex)
   }
 
   ngOnInit(): void {

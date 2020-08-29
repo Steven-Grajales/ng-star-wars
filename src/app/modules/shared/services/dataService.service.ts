@@ -6,15 +6,9 @@ import { API } from '../constants'
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
-	constructor(private http: HttpClient) { }
-
-	getPeople(pageIndex: number) {
-		return this.http.get(`${API}people/?page=${pageIndex}`)
-	}
-
-	getPerson(id: number) {
-		return this.http.get(`${API}people/${id}`)
-	}
+	constructor(
+		private http: HttpClient
+	) { }
 
 	getStarShips(pageIndex: number) {
 		return this.http.get(`${API}starships/?page=${pageIndex}`)
