@@ -29,6 +29,7 @@ export class PeopleListComponent implements OnInit {
     this.peopleSub = this.dataService.getPeople(this.pageIndex)
       .subscribe((data: PeopleData) => {
         this.people = data.results
+        // Add people data to ngxs store
         this.store.dispatch(new AddPeople(data.results))
       })
   }

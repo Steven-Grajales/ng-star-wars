@@ -31,9 +31,6 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin'
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
-    // NgxsModule.forRoot([], {
-    //   developmentMode: !environment.production
-    // }),
     SharedModule
   ],
   providers: [],
