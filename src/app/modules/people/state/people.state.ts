@@ -1,7 +1,8 @@
 import { State, Selector, Action, StateContext } from '@ngxs/store'
 
 import { People } from '../models'
-import { AddPerson, AddPeople } from '../actions/people.actions'
+// import { AddPerson, AddPeople, FetchPeople } from '../actions/people.actions'
+import * as PeopleActions from '../actions/people.actions'
 
 export class PeopleStateModel {
 	people: People[]
@@ -19,19 +20,24 @@ export class PeopleState {
 		return state.people
 	}
 
-	@Action(AddPerson)
-	addPerson({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: AddPerson) {
+	@Action(PeopleActions.AddPerson)
+	addPerson({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.AddPerson) {
 		const state = getState()
 		patchState({
 			people: [...state.people, payload]
 		})
 	}
 
-	@Action(AddPeople)
-	addPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: AddPeople) {
+	@Action(PeopleActions.AddPeople)
+	addPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.AddPeople) {
 		const state = getState()
 		patchState({
-			people: [...state.people, payload]
+			// people: [...state.people, payload]
 		})
+	}
+
+	@Action(PeopleActions.FetchPeople)
+	fetchPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.FetchPeople) {
+
 	}
 }

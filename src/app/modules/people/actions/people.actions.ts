@@ -14,3 +14,14 @@ export class GetPeople {
 	static readonly type = '[People] Get People'
 	constructor() { }
 }
+
+export class FetchPeople {
+	static readonly type = '[People] Fetch People'
+	constructor() { }
+}
+
+export type PeopleActions =
+	| AddPeople
+	| AddPerson
+	| GetPeople
+	| FetchPeople
