@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { icons } from '../../../shared'
-import { People, PeopleData } from '../../models'
+import { People } from '../../models'
 import { PeopleService } from '../../providers/people.service'
 import * as PeopleActions from '../../actions/people.actions'
 import { Store } from '@ngxs/store'
@@ -24,18 +24,13 @@ export class PeopleListComponent implements OnInit {
   }
 
   private getPeople() {
-    this.peopleDataSub = this.peopleService.fetchPeople(this.pageIndex)
-      .subscribe((data) => {
-      // .subscribe((data: PeopleData) => {
-        console.log('people data in data service!', data)
-        const { results } = data
-        this.store.dispatch(new PeopleActions.SetPeople(results)).subscribe(data => {
-          this.store.dispatch(new PeopleActions.GetPeople).subscribe(people => {
-            this.people = people.peopleStore.people[0]
-            console.log('d', people)
-          }).unsubscribe()
-        })
+    this.peopleDataSub = this.peopleService.fetchPeople(this.pageIndex).subscribe(data => {
+      this.store.dispatch(new PeopleActions.SetPeople(data.results)).subscribe(() => {
+        this.store.dispatch(new PeopleActions.GetPeople).subscribe(people => {
+          this.people = people.peopleStore.people[0]
+        }).unsubscribe()
       })
+    })
   }
 
   ngOnInit(): void {
