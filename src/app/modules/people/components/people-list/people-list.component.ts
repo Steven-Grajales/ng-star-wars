@@ -29,7 +29,7 @@ export class PeopleListComponent implements OnInit {
         this.store.dispatch(new PeopleActions.GetPeople).subscribe(people => {
           this.people = people.peopleStore.people[0]
         }).unsubscribe()
-      })
+      }).unsubscribe()
     })
   }
 

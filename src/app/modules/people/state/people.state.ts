@@ -22,6 +22,7 @@ export class PeopleState {
 	@Action(PeopleActions.SetPeople)
 	setPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.SetPeople) {
 		const state = getState()
+		console.log('payload', payload)
 		patchState({
 			people: [...state.people, payload]
 		})
