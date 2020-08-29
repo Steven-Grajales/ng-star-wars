@@ -25,9 +25,11 @@ export class PeopleListComponent implements OnInit {
 
   private getPeople() {
     this.peopleDataSub = this.peopleService.fetchPeople(this.pageIndex)
-      .subscribe((data: PeopleData) => {
+      .subscribe((data) => {
+      // .subscribe((data: PeopleData) => {
         console.log('people data in data service!', data)
-        this.store.dispatch(new PeopleActions.SetPeople(data.results)).subscribe(data => {
+        const { results } = data
+        this.store.dispatch(new PeopleActions.SetPeople(results)).subscribe(data => {
           this.store.dispatch(new PeopleActions.GetPeople).subscribe(people => {
             this.people = people.peopleStore.people[0]
             console.log('d', people)

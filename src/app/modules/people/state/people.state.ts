@@ -19,27 +19,6 @@ export class PeopleState {
 		return state.people
 	}
 
-	// @Action(PeopleActions.AddPerson)
-	// addPerson({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.AddPerson) {
-	// 	const state = getState()
-	// 	patchState({
-	// 		people: [...state.people, payload]
-	// 	})
-	// }
-
-	// @Action(PeopleActions.AddPeople)
-	// addPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.AddPeople) {
-	// 	const state = getState()
-	// 	patchState({
-	// 		people: [...state.people, payload]
-	// 	})
-	// }
-
-	// @Action(PeopleActions.FetchPeople)
-	// fetchPeople({ getState, patchState }: StateContext<PeopleStateModel>, { }: PeopleActions.FetchPeople) {
-
-	// }
-
 	@Action(PeopleActions.SetPeople)
 	setPeople({ getState, patchState }: StateContext<PeopleStateModel>, { payload }: PeopleActions.SetPeople) {
 		const state = getState()
