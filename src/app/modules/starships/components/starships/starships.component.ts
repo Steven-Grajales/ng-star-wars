@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy, Output } from '@angular/core'
 import { Subscription } from 'rxjs'
 
-import { DataService, icons } from '../../../shared'
+import { icons } from '../../../shared'
 // Models
 import { Starship, StarshipData } from '../../models'
+import { StarshipsService } from '../../providers/starships.service'
 
 @Component({
   selector: 'app-starships',
@@ -17,7 +18,7 @@ export class StarshipsComponent implements OnInit, OnDestroy {
   starships: Starship[]
   iconPath: string
 
-  constructor(private dataService: DataService) {
+  constructor(private starshipsService: StarshipsService) {
     this.iconPath = icons.MillenniumFalcon
   }
 
@@ -30,7 +31,7 @@ export class StarshipsComponent implements OnInit, OnDestroy {
   }
 
   private getStarships() {
-    this.starshipSub = this.dataService.getStarShips(this.pageIndex).subscribe((data: StarshipData) => this.starships = data.results)
+    this.starshipSub = this.starshipsService.getStarShips(this.pageIndex).subscribe((data: StarshipData) => this.starships = data.results)
   }
 
   previousPage() {

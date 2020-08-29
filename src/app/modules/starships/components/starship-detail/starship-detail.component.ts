@@ -9,5 +9,6 @@ import { Starship } from '../../models'
 })
 export class StarshipDetailComponent {
   @Input() starship: Starship
+  
   constructor() { }
 }
