@@ -1,5 +1,7 @@
 # NgStarWars
 
+Description: A learning app built to explore Angular using the Star Wars API (SWAPI)
+
 ## Development server
 
 Run `npm i` to install dependencies.
